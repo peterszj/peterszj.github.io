@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Peter Sun</title>
+<meta name="description" content="Curriculum Vitae of Peter (Zhengjia) Sun — Computer Science undergraduate at the University of Michigan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">Peter Sun<span class="brand-cn">孙正嘉</span></a>
+    <nav class="site-nav">
+      <a href="index.html">About</a>
+      <a href="cv.html" class="active">CV</a>
+      <a href="research.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-wide">
+
+  <div class="cv-header">
+    <h1>Peter Sun <span style="font-weight:400; color:var(--ink-faint); font-size:1.4rem;">孙正嘉</span></h1>
+    <p class="subtitle">Computer Science · University of Michigan, Ann Arbor</p>
+    <p class="subtitle" style="margin-top:0.5rem;">
+      <a href="contact.html">Contact</a> ·
+      <a href="research.html">Projects</a> ·
+      Updated November 2026
+    </p>
+  </div>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Education</h2>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">University of Michigan, Ann Arbor</span>
+        <span class="cv-entry-date">2026 – 2027 (expected)</span>
+      </div>
+      <p class="cv-entry-sub">B.S. in Computer Science · GPA 3.75</p>
+      <ul>
+        <li>Core coursework: Applied Parallel Programming with GPUs (EECS&nbsp;471), Data Structures &amp; Algorithms, Introduction to Machine Learning, Numerical Methods, Software Engineering, Computer Organization.</li>
+        <li>Writing &amp; communication: Technical Communication (TC-300), with a current research project on tokenization inequity in large language models.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">UM–SJTU Joint Institute, Shanghai Jiao Tong University</span>
+        <span class="cv-entry-date">2023 – 2026</span>
+      </div>
+      <p class="cv-entry-sub">Dual-degree program · Foundational CS &amp; engineering coursework</p>
+      <ul>
+        <li>Programming and Introductory Data Structures, Data Structures and Algorithms, Numerical Methods for Engineers and Scientists, Honors Physics I &amp; II, Applied Honors Calculus II, Linear Algebra, Introduction to Statistics &amp; Data Analysis.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Technische Universität Berlin (exchange)</span>
+        <span class="cv-entry-date">Jan 2025</span>
+      </div>
+      <p class="cv-entry-sub">Introduction to Business Data Science with Python</p>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Korea University (exchange)</span>
+        <span class="cv-entry-date">Jan 2024</span>
+      </div>
+      <p class="cv-entry-sub">Introduction to Artificial Intelligence — first formal exposure to deep learning and PyTorch.</p>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Research Experience</h2>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Undergraduate Research Assistant</span>
+        <span class="cv-entry-date">Dec 2025 – Present</span>
+      </div>
+      <p class="cv-entry-sub">University of Michigan, Ann Arbor</p>
+      <ul>
+        <li>Currently contributing to an ongoing research project on self-supervised representation learning, working under the guidance of a faculty advisor and a senior PhD student in the lab. The work is not yet public; I am glad to discuss it directly with prospective advisors.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Research Assistant — Prof. Xiaodong Gu's group</span>
+        <span class="cv-entry-date">Mar 2025 – Aug 2025</span>
+      </div>
+      <p class="cv-entry-sub">Shanghai Jiao Tong University</p>
+      <ul>
+        <li>Designed a <strong>voxel-based 3D temperature field reconstruction pipeline</strong>, converting STL meshes and thermal sensor readings into voxelized datasets for neural-network training. <a href="research-temp-field.html">Project page →</a></li>
+        <li>Developed a <strong>3D convolutional neural network</strong> for spatiotemporal prediction of temperature fields in high-temperature components.</li>
+        <li>Replaced a fragmented manual preprocessing workflow with an Open3D-centred pipeline, eliminating a recurring source of human error and enabling the team to iterate on model architectures roughly twice as fast.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED PROJECTS ============ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Selected Coursework Projects</h2>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">CUDA Convolution Optimization for a LeNet-style CNN</span>
+        <span class="cv-entry-date">Fall 2025</span>
+      </div>
+      <p class="cv-entry-sub">EECS 471: Applied Parallel Programming with GPUs · University of Michigan</p>
+      <ul>
+        <li>Implemented and progressively optimized a CUDA forward-convolution kernel for inference on Fashion-MNIST, stacking four optimizations: constant-memory weights, tiled shared memory, weight transposition for coalesced access, and register-level accumulation. <a href="research-cuda.html">Project page →</a></li>
+        <li>Profiled each variant with <strong>Nsight Compute</strong> (<span class="mono">.ncu-rep</span>), reading occupancy, memory-throughput, and stall metrics to justify each design change quantitatively.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Tokenization Inequity in Large Language Models</span>
+        <span class="cv-entry-date">Fall 2025</span>
+      </div>
+      <p class="cv-entry-sub">TC-300: Technical Communication · independent research project</p>
+      <ul>
+        <li>Investigating the <em>tokenization tax</em>: how modern BPE tokenizers systematically use more tokens to encode non-English text, inflating cost and latency for non-English users; producing a literature-grounded blog post for a general technical audience.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <span class="cv-entry-title">Memory Chip — 2D Game Design</span>
+        <span class="cv-entry-date">Spring 2024</span>
+      </div>
+      <p class="cv-entry-sub">Introduction to Engineering · UM-SJTU Joint Institute</p>
+      <ul>
+        <li>Programmer and visual designer for a six-week team project building a breakout-style game in <strong>ELM</strong> with a custom 2D engine; awarded <em>Best Game Design</em>. <a href="research-memory-chip.html">Project page →</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ TECHNICAL SKILLS ============ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Technical Skills</h2>
+    <dl class="kv-list">
+      <dt>Languages</dt>
+      <dd>C++, C, Python, CUDA C/C++, MATLAB, ELM</dd>
+
+      <dt>Machine Learning</dt>
+      <dd>PyTorch, self-supervised learning, fine-tuning, representation learning, UMAP</dd>
+
+      <dt>Computer Vision</dt>
+      <dd>3D CNNs, Vision Transformers (ViT), Open3D, voxel-based modeling, multiplexed image analysis</dd>
+
+      <dt>GPU &amp; Systems</dt>
+      <dd>CUDA programming, shared memory tiling, Nsight Compute profiling</dd>
+
+      <dt>Tools</dt>
+      <dd>Git &amp; GitHub, Docker, VS Code, MLflow, LaTeX, Markdown, Obsidian</dd>
+
+      <dt>Spoken</dt>
+      <dd>Chinese (native), English (proficient, CET-4: 655)</dd>
+    </dl>
+  </section>
+
+  <!-- ============ AWARDS ============ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Awards &amp; Honors</h2>
+    <div class="cv-entry">
+      <ul>
+        <li><strong>Best Game Design Award</strong> — Introduction to Engineering, UM-SJTU Joint Institute (2024).</li>
+        <li><strong>Bronze Medal</strong> — UPC Organizing Committee (2024).</li>
+        <li><strong>UM-SJTU Joint Institute Outstanding Freshman Scholarship</strong> (2023).</li>
+        <li><strong>Second Prize (Provincial)</strong> — China National High School Mathematics Olympiad (2022).</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Peter Sun · Built for TC-300 at the University of Michigan</p>
+  <p><a href="index.html">About</a> · <a href="research.html">Projects</a> · <a href="contact.html">Contact</a></p>
+</footer>
+
+</body>
+</html>

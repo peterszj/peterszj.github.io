@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peter Sun — Computer Science, University of Michigan</title>
+<meta name="description" content="Peter Sun is an undergraduate at the University of Michigan studying computer science, with research interests in self-supervised representation learning and computer vision for biomedical applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">Peter Sun<span class="brand-cn">孙正嘉</span></a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">About</a>
+      <a href="cv.html">CV</a>
+      <a href="research.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="hero">
+    <p class="hero-eyebrow">University of Michigan · B.S. Computer Science</p>
+    <h1 class="hero-title">Peter Sun<span class="cn">孙正嘉</span></h1>
+    <p class="hero-tagline">Studying how machines learn to see — with as little supervision as the world is willing to give.</p>
+  </section>
+
+  <section>
+    <p>
+      I am an undergraduate at the University of Michigan working on machine
+      learning research at the intersection of self-supervised representation
+      learning and computer vision. I am drawn to problems where the data is
+      abundant but the labels are scarce — biomedical imaging, scientific
+      computing, and other domains where collecting ground truth is
+      prohibitively expensive.
+    </p>
+    <p>
+      Most recently, at Shanghai Jiao Tong University, I worked on a 3D
+      convolutional pipeline for predicting transient temperature fields in
+      high-temperature components — a project that taught me how much of
+      machine-learning research is really data-engineering research in
+      disguise. Alongside it I have been deepening my fluency in the
+      systems layer underneath ML, with a CUDA convolution-optimization
+      project for the GPU-programming course at Michigan. I am currently
+      doing further research in self-supervised representation learning at
+      Michigan; this work is not yet public, but I am happy to discuss it
+      with prospective advisors directly.
+    </p>
+    <p>
+      I am applying to Ph.D. programs in computer science, with a focus on
+      machine learning, computer vision, and ML systems. My academic path has
+      taken me through the UM-SJTU Joint Institute, exchange terms at Korea
+      University and TU Berlin, and now Ann Arbor — which has given me an
+      unusually broad view of how the same technical problems are framed
+      across very different intellectual traditions.
+    </p>
+  </section>
+
+  <p class="section-label">Featured Projects</p>
+
+  <section class="highlights">
+
+    <a class="highlight" href="research-temp-field.html">
+      <p class="highlight-meta">2025 · SJTU, Prof. Xiaodong Gu</p>
+      <h3 class="highlight-title">Voxel-Based 3D Temperature Field Reconstruction with a Spatiotemporal CNN</h3>
+      <p class="highlight-blurb">
+        End-to-end pipeline from STL meshes and thermal sensor readings to
+        voxelized datasets, feeding a 3D CNN that predicts the evolution of
+        temperature fields in high-temperature components.
+      </p>
+      <p class="highlight-tags">3D CNN · Open3D · voxelization · scientific ML</p>
+    </a>
+
+    <a class="highlight" href="research-cuda.html">
+      <p class="highlight-meta">Fall 2025 · EECS 471, UMich</p>
+      <h3 class="highlight-title">Optimizing a CUDA Convolution Kernel for a LeNet-style CNN</h3>
+      <p class="highlight-blurb">
+        Four stacked GPU optimizations — constant memory, tiled shared memory,
+        weight transposition, register-level accumulation — profiled with
+        Nsight Compute on Fashion-MNIST inference.
+      </p>
+      <p class="highlight-tags">CUDA · GPU optimization · Nsight Compute · ML systems</p>
+    </a>
+
+    <a class="highlight" href="research-memory-chip.html">
+      <p class="highlight-meta">2024 · UM-SJTU Joint Institute</p>
+      <h3 class="highlight-title">Memory Chip — A 2D Game Built from Scratch in Six Weeks</h3>
+      <p class="highlight-blurb">
+        Team project for Introduction to Engineering: programmer and visual
+        designer for an arcade-style game in ELM, built on an unfamiliar 2D
+        engine under a tight deadline. Won Best Game Design.
+      </p>
+      <p class="highlight-tags">ELM · game design · UI development · team engineering</p>
+    </a>
+
+  </section>
+
+  <p class="section-label">Beyond Research</p>
+
+  <section>
+    <p>
+      Outside research I am taking a course on the history of Chan and Zen
+      Buddhism this semester, which has been a useful counterweight to the
+      relentless empiricism of the rest of my coursework. I write notes in
+      both English and Chinese, often switching mid-paragraph; the
+      bilingualism leaks into how I think about technical writing too. I'm
+      currently working on a piece about the <em>tokenization tax</em> —
+      the way modern LLM tokenizers systematically inflate the cost of
+      processing non-English text — which has turned into a small research
+      project of its own.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Peter Sun · Built for TC-300 at the University of Michigan</p>
+  <p><a href="cv.html">CV</a> · <a href="research.html">Projects</a> · <a href="contact.html">Contact</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+/* ========================================
+   Peter Sun — Portfolio Site
+   Shared stylesheet
+   ======================================== */
+
+:root {
+  /* Color palette — restrained, academic, with a single warm accent */
+  --bg:          #fbfaf6;        /* warm off-white, easier on eyes than pure white */
+  --bg-elevated: #ffffff;
+  --ink:         #1a1a1a;        /* near-black for body text */
+  --ink-soft:    #4a4a4a;        /* secondary text */
+  --ink-faint:   #8a8a8a;        /* tertiary / captions */
+  --rule:        #e5e2d8;        /* hairline dividers */
+  --accent:      #7a1f1f;        /* deep burgundy — the one accent color */
+  --accent-soft: #f3e9e9;        /* tinted background for callouts */
+  --code-bg:     #f4f1e8;
+
+  /* Typography */
+  --font-serif: "Crimson Pro", "Source Serif Pro", Georgia, serif;
+  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:  "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* Layout */
+  --content-max: 680px;        /* narrow column, ~10 words per line at 18px */
+  --wide-max:    960px;        /* for cv & projects index */
+}
+
+/* ---------- Reset ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+h1 { font-size: 2.5rem; margin-bottom: var(--space-4); }
+h2 { font-size: 1.65rem; margin-top: var(--space-6); margin-bottom: var(--space-3); }
+h3 { font-size: 1.2rem; margin-top: var(--space-5); margin-bottom: var(--space-2); }
+h4 { font-size: 1rem; font-weight: 600; margin-top: var(--space-3); margin-bottom: var(--space-1); }
+
+p {
+  margin-bottom: var(--space-3);
+  text-align: justify;
+  hyphens: auto;
+}
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+em { font-style: italic; color: var(--ink-soft); }
+strong { font-weight: 600; }
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+/* ---------- Layout ---------- */
+.page {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-7);
+}
+.page-wide {
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-7);
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+  background: rgba(251, 250, 246, 0.92);
+}
+.site-header-inner {
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+.site-brand {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ink);
+  border-bottom: none;
+  letter-spacing: -0.01em;
+}
+.site-brand:hover { border-bottom: none; color: var(--accent); }
+.site-brand .brand-cn {
+  font-family: var(--font-serif);
+  color: var(--ink-faint);
+  font-weight: 400;
+  font-size: 0.95rem;
+  margin-left: var(--space-2);
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+}
+.site-nav a {
+  color: var(--ink-soft);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: var(--space-4);
+  margin-top: var(--space-7);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  text-align: center;
+}
+.site-footer p { text-align: center; margin-bottom: var(--space-1); }
+.site-footer a { color: var(--ink-soft); }
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  margin-bottom: var(--space-6);
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+.hero-title {
+  font-size: 2.8rem;
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+.hero-title .cn {
+  color: var(--ink-faint);
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-left: var(--space-2);
+  vertical-align: 0.15em;
+}
+.hero-tagline {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: var(--space-4);
+  text-align: left;
+}
+
+/* ---------- Section dividers ---------- */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Project highlight cards (home page) ---------- */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+.highlight {
+  display: block;
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
+  background: var(--bg-elevated);
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.highlight:hover {
+  border-color: var(--accent);
+  border-bottom-color: var(--accent);
+  transform: translateY(-2px);
+}
+.highlight-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+.highlight-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+.highlight-blurb {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+.highlight-tags {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  text-transform: lowercase;
+}
+
+/* ---------- CV-specific styling ---------- */
+.cv-header {
+  text-align: center;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+.cv-header h1 {
+  margin-bottom: var(--space-2);
+}
+.cv-header .subtitle {
+  font-family: var(--font-sans);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.cv-section {
+  margin-bottom: var(--space-5);
+}
+.cv-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+.cv-entry {
+  margin-bottom: var(--space-4);
+}
+.cv-entry:last-child { margin-bottom: 0; }
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+  flex-wrap: wrap;
+}
+.cv-entry-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.cv-entry-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.cv-entry-sub {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-2);
+}
+.cv-entry ul {
+  list-style: none;
+  padding-left: var(--space-3);
+}
+.cv-entry li {
+  position: relative;
+  margin-bottom: var(--space-2);
+  text-align: justify;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.cv-entry li::before {
+  content: "▸";
+  position: absolute;
+  left: -1rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  top: 0.2em;
+}
+
+/* Two-column lists (skills, courses) */
+.kv-list {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-2) var(--space-3);
+  font-size: 0.95rem;
+}
+.kv-list dt {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  padding-top: 0.25em;
+}
+.kv-list dd { color: var(--ink-soft); }
+
+/* ---------- Project (research) detail pages ---------- */
+.project-header {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+.project-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-2) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  margin-top: var(--space-3);
+}
+.project-meta-grid dt {
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  padding-top: 0.2em;
+}
+.project-meta-grid dd { color: var(--ink-soft); }
+
+.callout {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-4) 0;
+  font-size: 0.95rem;
+}
+.callout strong { color: var(--accent); }
+
+/* Schematic figure (SVG placeholder) */
+.figure {
+  margin: var(--space-5) 0;
+  padding: var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule);
+}
+.figure svg { display: block; width: 100%; height: auto; }
+.figure-caption {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  margin-top: var(--space-2);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Back link */
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  border-bottom: none;
+}
+.back-link:hover { color: var(--accent); border-bottom: none; }
+
+/* ---------- Research index page ---------- */
+.research-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.research-item {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+.research-item:last-child { border-bottom: none; }
+.research-item h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+}
+.research-item h3 a {
+  color: var(--ink);
+  border-bottom: none;
+}
+.research-item h3 a:hover {
+  color: var(--accent);
+  border-bottom: none;
+}
+.research-tags {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  margin-top: var(--space-2);
+}
+
+/* ---------- Contact page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  font-family: var(--font-sans);
+}
+.contact-grid dt {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  padding-top: 0.3em;
+}
+.contact-grid dd { font-size: 0.95rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .page, .page-wide { padding: var(--space-4) var(--space-3) var(--space-6); }
+  .hero-title { font-size: 2rem; }
+  .hero-title .cn { font-size: 1.1rem; }
+  h1 { font-size: 1.9rem; }
+  .site-header-inner { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+  .site-nav { gap: var(--space-3); flex-wrap: wrap; }
+  .kv-list { grid-template-columns: 1fr; gap: var(--space-1); }
+  .kv-list dt { margin-top: var(--space-2); }
+  p { text-align: left; hyphens: none; }
+  .cv-entry li { text-align: left; }
+}
+
+/* ---------- Print-friendly (so CV page prints decently) ---------- */
+@media print {
+  .site-header, .site-footer, .back-link { display: none; }
+  body { background: white; }
+  .page, .page-wide { max-width: 100%; padding: 0; }
+  a { color: var(--ink); border-bottom: none; }
+}

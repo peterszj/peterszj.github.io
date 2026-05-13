@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Peter Sun</title>
+<meta name="description" content="Selected projects by Peter Sun: scientific machine learning, GPU optimization, and game development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">Peter Sun<span class="brand-cn">孙正嘉</span></a>
+    <nav class="site-nav">
+      <a href="index.html">About</a>
+      <a href="cv.html">CV</a>
+      <a href="research.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <h1>Projects</h1>
+
+  <p>
+    My interests sit at the boundary of <em>representation learning</em>
+    and <em>scientific computer vision</em> — building visual models that
+    work well when data is plentiful but labels are not, and when the
+    images come from microscopes, sensors, or simulations rather than
+    from the web. Below are three projects that, taken together, cover
+    the range of what I have worked on: applied scientific ML, low-level
+    GPU optimization, and a team engineering project from earlier in my
+    undergraduate. Each page is a short technical write-up of what I did
+    and what I learned.
+  </p>
+  <p>
+    I am also currently doing further research in self-supervised
+    representation learning at Michigan; that work is not yet public, but
+    I am happy to discuss it directly with prospective advisors.
+  </p>
+
+  <section class="research-list" style="margin-top: var(--space-5);">
+
+    <div class="research-item">
+      <p class="highlight-meta">March – August 2025 · Shanghai Jiao Tong University</p>
+      <h3><a href="research-temp-field.html">Voxel-Based 3D Temperature Field Reconstruction with a Spatiotemporal CNN</a></h3>
+      <p>
+        Under Prof. Xiaodong Gu, I built an end-to-end pipeline for
+        predicting how temperature evolves inside high-temperature components.
+        The work spanned data engineering (STL meshes and thermal sensor
+        readings to voxelized tensors via Open3D) and model design (a 3D CNN
+        for spatiotemporal prediction). The most useful lesson was that the
+        preprocessing layer is where most projects silently fail.
+      </p>
+      <p class="research-tags">3D CNN · Open3D · voxelization · scientific machine learning</p>
+    </div>
+
+    <div class="research-item">
+      <p class="highlight-meta">Fall 2025 · EECS 471, University of Michigan</p>
+      <h3><a href="research-cuda.html">Optimizing a CUDA Convolution Kernel for a LeNet-style CNN</a></h3>
+      <p>
+        A from-scratch CUDA implementation of forward convolution for
+        inference on Fashion-MNIST, then four progressively layered
+        optimizations: constant-memory weights, tiled shared memory, weight
+        transposition for coalesced reads, and register-level accumulation.
+        Each step was profiled with Nsight Compute, so the design choices
+        are anchored in measured occupancy and memory-throughput numbers
+        rather than vibes.
+      </p>
+      <p class="research-tags">CUDA · GPU programming · Nsight Compute · ML systems</p>
+    </div>
+
+    <div class="research-item">
+      <p class="highlight-meta">Spring 2024 · UM-SJTU Joint Institute</p>
+      <h3><a href="research-memory-chip.html">Memory Chip — A 2D Game Built from Scratch in Six Weeks</a></h3>
+      <p>
+        A team project for Introduction to Engineering: a six-week
+        sprint to build a breakout-style game in ELM on top of an
+        unfamiliar custom 2D engine. I was programmer and visual
+        designer, owning the UI layer and the scene-to-scene audio
+        transitions. The project won Best Game Design at the course's
+        final showcase. What I remember most from it is not the
+        engineering — it is the lesson that the way out of a hard problem
+        is to read the manual harder than feels reasonable.
+      </p>
+      <p class="research-tags">ELM · game design · UI development · team engineering</p>
+    </div>
+
+  </section>
+
+  <p class="section-label">Writing</p>
+
+  <section>
+    <p>
+      <strong>Tokenization inequity in LLMs.</strong> A research-essay project
+      for TC-300 (Technical Communication) investigating the "tokenization
+      tax" — the way modern BPE tokenizers use systematically more tokens
+      to encode the same idea in Chinese, Arabic, or Hindi than in English,
+      raising both the dollar cost and the latency of using large language
+      models for speakers of those languages. The output is a blog post
+      for a general technical audience, grounded in academic literature on
+      tokenization, fairness, and inference economics. I am finishing the
+      draft this semester.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Peter Sun · Built for TC-300 at the University of Michigan</p>
+  <p><a href="index.html">About</a> · <a href="cv.html">CV</a> · <a href="contact.html">Contact</a></p>
+</footer>
+
+</body>
+</html>
