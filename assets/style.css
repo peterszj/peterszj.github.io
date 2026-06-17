@@ -9,7 +9,7 @@
   --bg-elevated: #ffffff;
   --ink:         #1a1a1a;        /* near-black for body text */
   --ink-soft:    #4a4a4a;        /* secondary text */
-  --ink-faint:   #8a8a8a;        /* tertiary / captions */
+  --ink-faint:   #6e6e6e;        /* tertiary / captions — darkened to meet WCAG AA contrast */
   --rule:        #e5e2d8;        /* hairline dividers */
   --accent:      #7a1f1f;        /* deep burgundy — the one accent color */
   --accent-soft: #f3e9e9;        /* tinted background for callouts */
@@ -63,8 +63,8 @@ h4 { font-size: 1rem; font-weight: 600; margin-top: var(--space-3); margin-botto
 
 p {
   margin-bottom: var(--space-3);
-  text-align: justify;
-  hyphens: auto;
+  text-align: left;
+  hyphens: manual;
 }
 p:last-child { margin-bottom: 0; }
 
@@ -147,7 +147,12 @@ code, .mono {
   padding-bottom: 2px;
 }
 .site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-.site-nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
+.site-nav .active {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  cursor: default;
+}
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -228,7 +233,9 @@ code, .mono {
   border-color: var(--accent);
   border-bottom-color: var(--accent);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(122, 31, 31, 0.08);
 }
+.highlight:hover .highlight-title { color: var(--accent); }
 .highlight-meta {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -318,7 +325,7 @@ code, .mono {
 .cv-entry li {
   position: relative;
   margin-bottom: var(--space-2);
-  text-align: justify;
+  text-align: left;
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
@@ -465,6 +472,65 @@ code, .mono {
   padding-top: 0.3em;
 }
 .contact-grid dd { font-size: 0.95rem; }
+
+/* ---------- Shared "this is clickable" cue ---------- */
+.card-cta {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+/* ---------- Clickable project cards (research index) ---------- */
+.research-card {
+  display: block;
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
+  background: var(--bg-elevated);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.research-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(122, 31, 31, 0.08);
+}
+.research-card h3 { margin-top: 0; margin-bottom: var(--space-2); color: var(--ink); }
+.research-card:hover h3 { color: var(--accent); }
+.research-card p { text-align: left; }
+
+/* ---------- Project detail: next / previous navigation ---------- */
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+  flex-wrap: wrap;
+}
+.project-nav a {
+  flex: 1 1 200px;
+  font-family: var(--font-sans);
+  border-bottom: none;
+  color: var(--ink-soft);
+}
+.project-nav a:hover { color: var(--accent); border-bottom: none; }
+.project-nav .nav-next { text-align: right; }
+.project-nav .nav-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin-bottom: 3px;
+}
+.project-nav .nav-title { font-weight: 600; font-size: 0.95rem; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {

@@ -18,7 +18,7 @@
     <nav class="site-nav">
       <a href="index.html">About</a>
       <a href="cv.html">CV</a>
-      <a href="research.html" class="active">Projects</a>
+      <span class="active">Projects</span>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -45,11 +45,13 @@
     I am happy to discuss it directly with prospective advisors.
   </p>
 
-  <section class="research-list" style="margin-top: var(--space-5);">
+  <h2 class="section-label">Selected Projects</h2>
 
-    <div class="research-item">
+  <section class="research-list" style="margin-top: var(--space-3);">
+
+    <a class="research-card" href="research-temp-field.html">
       <p class="highlight-meta">March – August 2025 · Shanghai Jiao Tong University</p>
-      <h3><a href="research-temp-field.html">Voxel-Based 3D Temperature Field Reconstruction with a Spatiotemporal CNN</a></h3>
+      <h3>Voxel-Based 3D Temperature Field Reconstruction with a Spatiotemporal CNN</h3>
       <p>
         Under Prof. Xiaodong Gu, I built an end-to-end pipeline for
         predicting how temperature evolves inside high-temperature components.
@@ -59,11 +61,12 @@
         preprocessing layer is where most projects silently fail.
       </p>
       <p class="research-tags">3D CNN · Open3D · voxelization · scientific machine learning</p>
-    </div>
+      <span class="card-cta">Read the write-up →</span>
+    </a>
 
-    <div class="research-item">
+    <a class="research-card" href="research-cuda.html">
       <p class="highlight-meta">Winter 2026 · EECS 471, University of Michigan</p>
-      <h3><a href="research-cuda.html">Optimizing a CUDA Convolution Kernel for a LeNet-style CNN</a></h3>
+      <h3>Optimizing a CUDA Convolution Kernel for a LeNet-style CNN</h3>
       <p>
         A from-scratch CUDA implementation of forward convolution for
         inference on Fashion-MNIST, then four progressively layered
@@ -74,11 +77,12 @@
         rather than vibes.
       </p>
       <p class="research-tags">CUDA · GPU programming · Nsight Compute · ML systems</p>
-    </div>
+      <span class="card-cta">Read the write-up →</span>
+    </a>
 
-    <div class="research-item">
+    <a class="research-card" href="research-memory-chip.html">
       <p class="highlight-meta">Spring 2024 · UM-SJTU Joint Institute</p>
-      <h3><a href="research-memory-chip.html">Memory Chip — A 2D Game Built from Scratch in Six Weeks</a></h3>
+      <h3>Memory Chip — A 2D Game Built from Scratch in Six Weeks</h3>
       <p>
         A team project for Introduction to Engineering: a six-week
         sprint to build a breakout-style game in ELM on top of an
@@ -90,11 +94,12 @@
         is to read the manual harder than feels reasonable.
       </p>
       <p class="research-tags">ELM · game design · UI development · team engineering</p>
-    </div>
+      <span class="card-cta">Read the write-up →</span>
+    </a>
 
   </section>
 
-  <p class="section-label">Writing</p>
+  <h2 class="section-label">Writing</h2>
 
   <section>
     <p>
@@ -113,7 +118,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 Zhengjia (Peter) Sun · Built for TC-497 at the University of Michigan</p>
+  <p>© 2026 Zhengjia (Peter) Sun · Built for TC497 at the University of Michigan</p>
   <p><a href="index.html">About</a> · <a href="cv.html">CV</a> · <a href="contact.html">Contact</a></p>
 </footer>
 
