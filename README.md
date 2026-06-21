@@ -1,6 +1,6 @@
 # Peter Sun — Portfolio Site
 
-A static, multi-page personal website built for the TC497 portfolio
+A static, multi-page personal website built for the TC-300 portfolio
 assignment at the University of Michigan, designed as a graduate-school
 application website (CS Ph.D. / CS Master's target).
 
