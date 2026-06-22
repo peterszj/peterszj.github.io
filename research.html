@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Zhengjia (Peter) Sun</title>
-<meta name="description" content="Selected projects by Zhengjia (Peter) Sun: scientific machine learning, GPU optimization, and game development.">
+<title>Research — Zhengjia (Peter) Sun</title>
+<meta name="description" content="The research journey of Zhengjia (Peter) Sun: from voxel-based scientific machine learning and GPU optimization to fine-tuning a spatial-proteomics foundation model.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <nav class="site-nav">
       <a href="index.html">About</a>
       <a href="cv.html">CV</a>
-      <span class="active">Projects</span>
+      <span class="active">Research</span>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -26,78 +26,71 @@
 
 <main class="page">
 
-  <h1>Projects</h1>
+  <h1>Research</h1>
 
   <p>
-    My interests sit at the boundary of <em>representation learning</em>
-    and <em>scientific computer vision</em> — building visual models that
-    work well when data is plentiful but labels are not, and when the
-    images come from microscopes, sensors, or simulations rather than
-    from the web. Below are three projects that, taken together, cover
-    the range of what I have worked on: applied scientific ML, low-level
-    GPU optimization, and a team engineering project from earlier in my
-    undergraduate. Each page is a short technical write-up of what I did
-    and what I learned.
+    My research interests sit at the boundary of <em>self-supervised
+    representation learning</em> and <em>scientific computer vision</em> —
+    building visual models that work well when data is plentiful but labels
+    are not, and when the images come from microscopes, sensors, or
+    simulations rather than from the web. I did not start there. The short
+    version of how I got here runs through three projects, and you can open
+    any of them in detail as you read.
   </p>
+
+  <h2 class="section-label">The journey</h2>
+
   <p>
-    I am also currently doing further research in self-supervised
-    representation learning at Michigan; that work is not yet public, but
-    I am happy to discuss it directly with prospective advisors.
+    My first real taste of research was at Shanghai Jiao Tong University,
+    under Prof. Xiaodong Gu, working on a
+    <button type="button" class="project-link" data-project="temp">voxel-based 3D temperature-field reconstruction pipeline</button>.
+    The premise was simple and a little audacious: replace expensive
+    finite-element simulations of heat flow inside high-temperature
+    components with a neural network that predicts the full temperature
+    field from geometry plus a handful of sensor readings. What I actually
+    spent most of my time on was the data — turning messy STL meshes and
+    sparse thermal readings into clean, voxelized tensors. That project
+    taught me the lesson I now start every project with: <em>the
+    preprocessing layer is where most research silently fails</em>, and
+    fixing it is the highest-leverage thing you can do.
   </p>
 
-  <h2 class="section-label">Selected Projects</h2>
+  <p>
+    The temperature-field work made me want to understand the machinery
+    underneath machine learning, not just the models on top of it. So at
+    Michigan I went a layer down, into GPU programming, with a project
+    <button type="button" class="project-link" data-project="cuda">optimizing a CUDA convolution kernel</button>
+    for a LeNet-style CNN. I stacked four optimizations — constant memory,
+    tiled shared memory, weight transposition, register-level accumulation
+    — but the part that stuck with me was not any single trick. It was the
+    discipline of letting Nsight Compute, not my intuition, decide what to
+    optimize next. That habit of profiling before optimizing has become the
+    way I think about systems generally, and it is why I am comfortable
+    saying foundation-model research is increasingly a systems problem in
+    disguise.
+  </p>
 
-  <section class="research-list" style="margin-top: var(--space-3);">
+  <p>
+    Those two threads — caring about the data pipeline, and caring about the
+    hardware — both feed into what I am doing now. At Michigan I am
+    <button type="button" class="project-link" data-project="kronos">fine-tuning KRONOS</button>,
+    a foundation model for spatial proteomics, under Prof. Jie Liu. This is
+    the work I most want to keep doing: self-supervised representation
+    learning applied to biomedical imaging, where the data is abundant, the
+    labels are scarce and expensive, and a good representation is worth far
+    more than a clever loss. It pulls together everything the earlier
+    projects taught me about data, models, and the systems that run them.
+  </p>
 
-    <a class="research-card" href="research-temp-field.html">
-      <p class="highlight-meta">March – August 2025 · Shanghai Jiao Tong University</p>
-      <h3>Voxel-Based 3D Temperature Field Reconstruction with a Spatiotemporal CNN</h3>
-      <p>
-        Under Prof. Xiaodong Gu, I built an end-to-end pipeline for
-        predicting how temperature evolves inside high-temperature components.
-        The work spanned data engineering (STL meshes and thermal sensor
-        readings to voxelized tensors via Open3D) and model design (a 3D CNN
-        for spatiotemporal prediction). The most useful lesson was that the
-        preprocessing layer is where most projects silently fail.
-      </p>
-      <p class="research-tags">3D CNN · Open3D · voxelization · scientific machine learning</p>
-      <span class="card-cta">Read the write-up →</span>
-    </a>
+  <h2 class="section-label">Where this is going</h2>
 
-    <a class="research-card" href="research-cuda.html">
-      <p class="highlight-meta">Winter 2026 · EECS 471, University of Michigan</p>
-      <h3>Optimizing a CUDA Convolution Kernel for a LeNet-style CNN</h3>
-      <p>
-        A from-scratch CUDA implementation of forward convolution for
-        inference on Fashion-MNIST, then four progressively layered
-        optimizations: constant-memory weights, tiled shared memory, weight
-        transposition for coalesced reads, and register-level accumulation.
-        Each step was profiled with Nsight Compute, so the design choices
-        are anchored in measured occupancy and memory-throughput numbers
-        rather than vibes.
-      </p>
-      <p class="research-tags">CUDA · GPU programming · Nsight Compute · ML systems</p>
-      <span class="card-cta">Read the write-up →</span>
-    </a>
-
-    <a class="research-card" href="research-memory-chip.html">
-      <p class="highlight-meta">Spring 2024 · UM-SJTU Joint Institute</p>
-      <h3>Memory Chip — A 2D Game Built from Scratch in Six Weeks</h3>
-      <p>
-        A team project for Introduction to Engineering: a six-week
-        sprint to build a breakout-style game in ELM on top of an
-        unfamiliar custom 2D engine. I was programmer and visual
-        designer, owning the UI layer and the scene-to-scene audio
-        transitions. The project won Best Game Design at the course's
-        final showcase. What I remember most from it is not the
-        engineering — it is the lesson that the way out of a hard problem
-        is to read the manual harder than feels reasonable.
-      </p>
-      <p class="research-tags">ELM · game design · UI development · team engineering</p>
-      <span class="card-cta">Read the write-up →</span>
-    </a>
-
-  </section>
+  <p>
+    I am applying to Ph.D. programs in computer science with a focus on
+    self-supervised representation learning, computer vision, and ML
+    systems — especially in scientific and biomedical domains. The three
+    projects above are public; my current KRONOS work is still in progress,
+    and I am glad to discuss it directly with prospective advisors.
+  </p>
 
   <h2 class="section-label">Writing</h2>
 
@@ -122,5 +115,7 @@
   <p><a href="index.html">About</a> · <a href="cv.html">CV</a> · <a href="contact.html">Contact</a></p>
 </footer>
 
+<script src="assets/projects.js"></script>
+<script src="assets/drawer.js"></script>
 </body>
 </html>

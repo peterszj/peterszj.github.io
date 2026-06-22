@@ -547,9 +547,121 @@ code, .mono {
   .cv-entry li { text-align: left; }
 }
 
+/* ---------- Inline project trigger (button-style highlight) ---------- */
+.project-link {
+  font: inherit;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: none;
+  border-bottom: 1px solid rgba(122, 31, 31, 0.35);
+  padding: 0.02em 0.28em;
+  margin: 0 0.02em;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.project-link:hover,
+.project-link:focus-visible {
+  background: #ecd9d9;
+  border-bottom-color: var(--accent);
+}
+.project-link::after {
+  content: " \2197";              /* ↗ — cue that it opens something */
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  vertical-align: 0.1em;
+}
+/* When used as an <a> fallback, strip the default link underline */
+a.project-link { text-decoration: none; }
+
+/* ---------- Slide-out project drawer ---------- */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.45);
+  z-index: 40;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.drawer-backdrop.is-open { opacity: 1; }
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(640px, 92vw);
+  max-width: 100%;
+  background: var(--bg);
+  z-index: 50;
+  box-shadow: -8px 0 32px rgba(26, 26, 26, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.drawer.is-open { transform: translateX(0); }
+
+.drawer-panel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.drawer-content {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-6) var(--space-5) var(--space-7);
+  outline: none;
+}
+.drawer-content .project-header { margin-top: var(--space-2); }
+.drawer-content h1 { font-size: 1.9rem; }
+
+.drawer-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 2;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.drawer-close:hover,
+.drawer-close:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Lock background scroll while the drawer is open */
+body.drawer-open { overflow: hidden; }
+
+/* Near-fullscreen drawer on narrow screens */
+@media (max-width: 640px) {
+  .drawer { width: 100vw; }
+  .drawer-content { padding: var(--space-6) var(--space-3) var(--space-6); }
+  .drawer-content h1 { font-size: 1.6rem; }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .drawer, .drawer-backdrop { transition: none; }
+}
+
 /* ---------- Print-friendly (so CV page prints decently) ---------- */
 @media print {
   .site-header, .site-footer, .back-link { display: none; }
+  .drawer, .drawer-backdrop { display: none; }
   body { background: white; }
   .page, .page-wide { max-width: 100%; padding: 0; }
   a { color: var(--ink); border-bottom: none; }

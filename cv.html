@@ -18,7 +18,7 @@
     <nav class="site-nav">
       <a href="index.html">About</a>
       <span class="active">CV</span>
-      <a href="research.html">Projects</a>
+      <a href="research.html">Research</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -31,7 +31,7 @@
     <p class="subtitle">Computer Science · University of Michigan, Ann Arbor</p>
     <p class="subtitle" style="margin-top:0.5rem;">
       <a href="contact.html">Contact</a> ·
-      <a href="research.html">Projects</a> ·
+      <a href="research.html">Research</a> ·
       Updated November 2026
     </p>
   </div>
@@ -102,7 +102,7 @@
       </div>
       <p class="cv-entry-sub">Shanghai Jiao Tong University</p>
       <ul>
-        <li>Designed a <strong>voxel-based 3D temperature field reconstruction pipeline</strong>, converting STL meshes and thermal sensor readings into voxelized datasets for neural-network training. <a href="research-temp-field.html">Project page →</a></li>
+        <li>Designed a <strong>voxel-based 3D temperature field reconstruction pipeline</strong>, converting STL meshes and thermal sensor readings into voxelized datasets for neural-network training. <a href="research.html#temp" class="project-link" data-project="temp">Project details</a></li>
         <li>Developed a <strong>3D convolutional neural network</strong> for spatiotemporal prediction of temperature fields in high-temperature components.</li>
         <li>Replaced a fragmented manual preprocessing workflow with an Open3D-centred pipeline, eliminating a recurring source of human error.</li>
       </ul>
@@ -120,7 +120,7 @@
       </div>
       <p class="cv-entry-sub">EECS 471: Applied Parallel Programming with GPUs · University of Michigan</p>
       <ul>
-        <li>Implemented and progressively optimized a CUDA forward-convolution kernel for inference on Fashion-MNIST, stacking four optimizations: constant-memory weights, tiled shared memory, weight transposition for coalesced access, and register-level accumulation. <a href="research-cuda.html">Project page →</a></li>
+        <li>Implemented and progressively optimized a CUDA forward-convolution kernel for inference on Fashion-MNIST, stacking four optimizations: constant-memory weights, tiled shared memory, weight transposition for coalesced access, and register-level accumulation. <a href="research.html#cuda" class="project-link" data-project="cuda">Project details</a></li>
         <li>Profiled each variant with <strong>Nsight Compute</strong> (<span class="mono">.ncu-rep</span>), reading occupancy, memory-throughput, and stall metrics to justify each design change quantitatively.</li>
       </ul>
     </div>
@@ -143,7 +143,7 @@
       </div>
       <p class="cv-entry-sub">Introduction to Engineering · UM-SJTU Joint Institute</p>
       <ul>
-        <li>Programmer and visual designer for a six-week team project building a breakout-style game in <strong>ELM</strong> with a custom 2D engine; awarded <em>Best Game Design</em>. <a href="research-memory-chip.html">Project page →</a></li>
+        <li>Programmer and visual designer for a six-week team project building a breakout-style game in <strong>ELM</strong> with a custom 2D engine; awarded <em>Best Game Design</em>. <a href="research.html#memchip" class="project-link" data-project="memchip">Project details</a></li>
       </ul>
     </div>
   </section>
@@ -189,8 +189,10 @@
 
 <footer class="site-footer">
   <p>© 2026 Zhengjia (Peter) Sun · Built for TC497 at the University of Michigan</p>
-  <p><a href="index.html">About</a> · <a href="research.html">Projects</a> · <a href="contact.html">Contact</a></p>
+  <p><a href="index.html">About</a> · <a href="research.html">Research</a> · <a href="contact.html">Contact</a></p>
 </footer>
 
+<script src="assets/projects.js"></script>
+<script src="assets/drawer.js"></script>
 </body>
 </html>
