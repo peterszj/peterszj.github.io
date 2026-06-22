@@ -10,53 +10,43 @@ window.PROJECTS = {
   /* ---------------------------------------------------------------- */
   kronos: {
     id: "kronos",
-    eyebrow: "Research project · [start date] – Present",
+    eyebrow: "Research project · Dec 2025 – Present",
     title: "Fine-Tuning KRONOS — a Spatial-Proteomics Foundation Model",
     meta: [
-      ["Advisor", "Prof. Jie Liu, University of Michigan [confirm / add lab + senior PhD mentor]"],
-      ["Role", "Undergraduate research assistant — [your specific role]"],
-      ["Stack", "Python, PyTorch, [base model checkpoint], [datasets], [hardware]"],
+      ["Advisor", "Prof. Jie Liu, University of Michigan"],
+      ["Working with", "Yicheng Tao (PhD student)"],
+      ["Role", "Undergraduate research assistant"],
       ["Status", "Ongoing — happy to discuss in detail with prospective advisors"]
     ],
     body: `
-      <div class="callout">
-        <strong>Draft — needs your input.</strong> The text below is a
-        placeholder skeleton written from the one-line brief
-        (self-supervised fine-tuning of a spatial-proteomics foundation
-        model) plus the existing site copy about the Michigan work under
-        Prof. Jie Liu. Please replace anything in <span class="mono">[brackets]</span>
-        and correct any detail I have guessed at.
-      </div>
-
       <h2>The problem</h2>
       <p>
         Spatial proteomics measures many proteins at once while preserving
         where each measurement sits in the tissue — so the data is
         image-like, high-dimensional, and expensive to label. <strong>KRONOS</strong>
         is a foundation model for this setting: pretrained on large amounts
-        of unlabeled spatial-proteomics imagery so that it learns general
-        representations of cells and tissue structure. [One or two sentences,
-        in your own words, on what KRONOS is and why a foundation model is
-        the right tool here.]
+        of spatial-proteomics imagery so that it learns general-purpose
+        representations of cells and tissue structure that can be reused
+        across many downstream tasks.
       </p>
 
       <h2>What I am doing</h2>
       <p>
-        I am <strong>fine-tuning KRONOS</strong> for [your downstream task —
-        e.g. cell-type classification / niche detection / a specific tissue
-        or disease]. [Describe the self-supervised objective or adaptation
-        strategy you are using, the dataset(s), and how you are evaluating it.]
+        Since December 2025 I have been working in <strong>Prof. Jie Liu's</strong>
+        lab at the University of Michigan, alongside PhD student
+        <strong>Yicheng Tao</strong>, on <strong>fine-tuning KRONOS</strong>.
+        Rather than training a model from scratch, we adapt the pretrained
+        foundation model to our own data, so that the representations it
+        learned during pretraining transfer to the specific problems we
+        care about.
       </p>
       <p>
-        [Concrete contributions so far: what you built, what you measured,
-        any preliminary result you can share. Keep one detail the reader can
-        anchor on — a metric, a dataset size, a design choice.]
+        This is exactly the kind of label-efficient, transfer-first approach
+        I find most compelling: most of the signal already lives in the
+        pretrained weights, and the real work is in adapting them well. The
+        project is ongoing, and I will expand this write-up with concrete
+        methods and results as the work matures.
       </p>
-
-      <div class="callout">
-        [The one modeling or engineering decision you are most proud of, and
-        why — mirror the voice of the other project write-ups.]
-      </div>
 
       <h2>Why this matters for my Ph.D. interests</h2>
       <p>
@@ -64,8 +54,10 @@ window.PROJECTS = {
         <em>self-supervised representation learning</em> applied to
         <em>scientific and biomedical computer vision</em>, where labels are
         scarce and the images come from instruments rather than the web.
-        [One or two sentences connecting KRONOS to the research direction you
-        want to pursue in a Ph.D.]
+        Fine-tuning a foundation model like KRONOS is, to me, a concrete
+        instance of the larger question I want to spend a Ph.D. on — how to
+        build and adapt general visual representations for domains where
+        ground truth is expensive to obtain.
       </p>
     `
   },
